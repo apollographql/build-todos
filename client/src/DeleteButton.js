@@ -1,5 +1,12 @@
-import {useMutation} from '@apollo/client'
-import {DELETE_TODO} from './fragments';
+import {useMutation, gql} from '@apollo/client'
+
+const DELETE_TODO = gql`
+  mutation DeleteTodo($id: ID!) {
+    deleteTodo(id: $id) {
+      id
+    }
+  }
+`
 
 export default function DeleteButton({id}) {
   const [deleteTodo, {loading}] = useMutation(DELETE_TODO, {

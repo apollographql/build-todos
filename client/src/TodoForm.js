@@ -1,6 +1,15 @@
-import { useMutation } from "@apollo/client";
+import { gql, useMutation } from "@apollo/client";
 import { useRef } from "react";
-import { ADD_TODO } from "./fragments";
+import { TODO_FRAGMENT } from "./fragments";
+
+const ADD_TODO = gql`
+  mutation AddTodo($text: String!) {
+    addTodo(text: $text) {
+      ...TodoFragment
+    }
+  }
+  ${TODO_FRAGMENT}
+`
 
 export default function TodoForm() {
   const formRef = useRef();

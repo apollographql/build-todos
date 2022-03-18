@@ -1,5 +1,14 @@
-import {useMutation} from '@apollo/client'
-import {UPDATE_TODO} from './fragments';
+import {useMutation, gql} from '@apollo/client'
+import {TODO_FRAGMENT} from './fragments'
+
+const UPDATE_TODO = gql`
+  mutation UpdateTodo($id: ID!, $isComplete: Boolean!) {
+    updateTodo(id: $id, isComplete: $isComplete) {
+      ...TodoFragment
+    }
+  }
+  ${TODO_FRAGMENT}
+`
 
 export default function ToggleCompletion({todo}) {
   const [updateTodo, {loading}] = useMutation(UPDATE_TODO, {

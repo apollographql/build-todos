@@ -1,4 +1,4 @@
-import {gql} from '@apollo/client';
+import {gql, useMutation} from '@apollo/client';
 
 export const TODO_FRAGMENT = gql`
   fragment TodoFragment on Todo {
@@ -17,31 +17,13 @@ export const LIST_TODOS = gql`
   ${TODO_FRAGMENT}
 `
 
-export const UPDATE_TODO = gql`
-  mutation UpdateTodo($id: ID!, $isComplete: Boolean!) {
-    updateTodo(id: $id, isComplete: $isComplete) {
-      ...TodoFragment
-    }
-  }
-  ${TODO_FRAGMENT}
-`
-
-export const ADD_TODO = gql`
-  mutation AddTodo($text: String!) {
-    addTodo(text: $text) {
-      ...TodoFragment
-    }
-  }
-  ${TODO_FRAGMENT}
-`
-
-export const DELETE_TODO = gql`
-  mutation DeleteTodo($id: ID!) {
-    deleteTodo(id: $id) {
-      id
-    }
-  }
-`
+// useMutation(ADD_TODO, {
+//   refetchQueries: [
+//     {
+//       query: LIST_TODOS
+//     }
+//   ]
+// })
 
 // update(cache, { data }) {
 //   // responding to an add mutation
