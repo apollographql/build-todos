@@ -21,7 +21,10 @@ const typeDefs = gql`
 
 const resolvers = {
   Query: {
-    todos: () => Todo.findAll()
+    todos: () =>
+      Todo.findAll({
+        order: [['createdAt', 'DESC']]
+      })
   },
   Mutation: {
     addTodo: (_, {text}) => Todo.create({text}),
