@@ -3,8 +3,12 @@
   "eslintConfig": {
     "extends": "@trevorblades"
   },
+  "engines": {
+    "node": "16.x"
+  },
   "scripts": {
-    "start": "nodemon -r dotenv/config index.js"
+    "start": "node index.js",
+    "dev": "nodemon -r dotenv/config index.js"
   },
   "devDependencies": {
     "@trevorblades/eslint-config": "^7.2.8",
