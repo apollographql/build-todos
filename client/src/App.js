@@ -1,5 +1,5 @@
 import { useQuery } from "@apollo/client";
-import {LIST_TODOS} from './fragments';
+import {LIST_TODOS} from './queries';
 import TodoForm from "./TodoForm";
 import DeleteButton from './DeleteButton';
 import ToggleCompletion from './ToggleCompletion'

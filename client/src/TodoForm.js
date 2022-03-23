@@ -1,6 +1,6 @@
 import { gql, useMutation } from "@apollo/client";
 import { useRef } from "react";
-import { TODO_FRAGMENT } from "./fragments";
+import { TODO_FRAGMENT } from "./queries";
 
 const ADD_TODO = gql`
   mutation AddTodo($text: String!) {

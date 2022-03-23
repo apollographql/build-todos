@@ -1,4 +1,4 @@
-import {gql, useMutation} from '@apollo/client';
+import {gql} from '@apollo/client';
 
 export const TODO_FRAGMENT = gql`
   fragment TodoFragment on Todo {
