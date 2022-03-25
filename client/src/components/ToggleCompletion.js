@@ -1,5 +1,5 @@
 import {useMutation, gql} from '@apollo/client'
-import {TODO_FRAGMENT} from './queries'
+import {TODO_FRAGMENT} from '../queries'
 
 const UPDATE_TODO = gql`
   mutation UpdateTodo($id: ID!, $isComplete: Boolean!) {

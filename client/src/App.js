@@ -1,8 +1,8 @@
 import { useQuery } from "@apollo/client";
 import {LIST_TODOS} from './queries';
-import TodoForm from "./TodoForm";
-import DeleteButton from './DeleteButton';
-import ToggleCompletion from './ToggleCompletion'
+import TodoForm from "./components/TodoForm";
+import DeleteButton from './components/DeleteButton';
+import ToggleCompletion from './components/ToggleCompletion'
 
 function App() {
   const { data, loading, error } = useQuery(LIST_TODOS)
