@@ -14,7 +14,7 @@
     "@trevorblades/eslint-config": "^7.2.8",
     "dotenv": "^16.0.0",
     "eslint": "^7.32.0",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.20"
   },
   "dependencies": {
     "apollo-server": "^3.6.4",
